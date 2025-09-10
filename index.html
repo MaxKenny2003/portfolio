@@ -22,6 +22,23 @@
 		@keyframes blink {
 			50% { opacity: 0; }
 		}
+
+		.coursework-lists {
+			display: flex;         /* puts children side by side */
+			gap: 2rem;             /* space between columns */
+			flex-wrap: nowrap;      /* keep all on one line */
+			}
+
+		.course-column {
+			flex: 1;               /* equal width for each column */
+			min-width: 220px;      /* prevents them from shrinking too small */
+			}
+
+		.course-column ul {
+			margin: 0;
+			padding-left: 20px;    /* keep bullets aligned */
+			}
+
 	</style>
 	<body class="is-preload">
 
@@ -57,38 +74,60 @@
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<a href="#" class="image"><img src="images/Headshot.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
+									<h2>About</h2>
+									<p>
+										I’m a senior pursuing dual degrees in Computer Science and Aerospace Engineering, with a focus on embedded systems, hardware, and software design. 
+										I bring hands-on experience in avionics, PCB development, hardware verification, and software/firmware design. Leveraging my multidisciplinary background, 
+										I am passionate about advancing technologies that make space more accessible to all.
+									</p>
+									<div class="coursework-lists">
+										<div>
+											<h3>Relevant Computer Engineering Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>Spacecraft Dynamics</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Control of Aerospace Vehicles</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="generic.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Aerospace Engineering Coursework</h3>
+											<ul>
+												<li>Aircraft and Spacecraft Propulsion</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>Aerodynamics</li>
+												<li>Electronic Circuits</li>
+												<li>Intro to Semiconductor Devices</li>
+												<li>Industrial Electronics</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="generic.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Computer Science Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>Game Engine Architecture</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>Data Structures and Algorithms</li>
+												<li>Web Development</li>
+												<li>Intro to 3D Art and Animation</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="generic.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 						</section>
