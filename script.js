@@ -22,6 +22,7 @@ function type() {
       isDeleting = false;
       i = (i+1) % words.length;
     }
+    
   }
   setTimeout(type, isDeleting ? speed/2 : speed);
 }
