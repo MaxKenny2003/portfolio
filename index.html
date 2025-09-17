@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
 	</head>
 	<style>
 		.cursor {
@@ -38,6 +40,74 @@
 			margin: 0;
 			padding-left: 20px;    /* keep bullets aligned */
 			}
+
+		.coursework-lists {
+			display: flex;
+			gap: 2rem;          /* spacing between columns */
+			align-items: stretch;
+			}
+
+		.coursework-lists > div {
+			flex: 1;            /* equal width columns */
+			display: flex;
+			flex-direction: column;
+			background: rgba(255, 255, 255, 0.05); /* optional: nice card feel */
+			padding: 1rem;
+			border-radius: 10px;
+			}
+
+		.coursework-lists h3 {
+			margin-top: 0;
+			}
+
+		.coursework-lists ul.actions {
+			margin-top: auto;   /* pushes button(s) to the bottom */
+			}
+
+		.coursework-lists ul li {
+			font-size: 1rem;   /* smaller than normal (1rem = 16px default) */
+			line-height: 1.6;    /* adjust spacing between lines */
+			}
+
+		.skills-section {
+			text-align: center;
+			}
+
+		.skills-grid {
+			display: grid;
+			grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+			gap: 20px; /* Space between boxes */
+			justify-content: center;
+			margin-top: 20px;
+			}
+
+		.skills-grid2 {
+			display: grid;
+			grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+			gap: 20px; /* Space between boxes */
+			justify-content: center;
+			margin-top: 20px;
+			}
+
+		.skill-box {
+			background: #1c1c1c;
+			border-radius: 10px;
+			padding: 20px;
+			text-align: center;
+			font-size: 14px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+			}
+
+		.skill-box:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+			}
+
+		.devicon-icon {
+			font-size: 80px;
+			}	
 
 	</style>
 	<body class="is-preload">
@@ -89,21 +159,7 @@
 											<ul>
 												<li>Advanced Embedded Systems</li>
 												<li>CubeSat Flight Laboratory</li>
-												<li>Spacecraft Dynamics</li>
 												<li>x88 Model Based Systems Engineering Course Series</li>
-												<li>Control of Aerospace Vehicles</li>
-											</ul>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
-										</div>
-
-										<div>
-											<h3>Relevant Aerospace Engineering Coursework</h3>
-											<ul>
-												<li>Aircraft and Spacecraft Propulsion</li>
-												<li>CubeSat Flight Laboratory</li>
-												<li>Aerodynamics</li>
 												<li>Electronic Circuits</li>
 												<li>Intro to Semiconductor Devices</li>
 												<li>Industrial Electronics</li>
@@ -124,6 +180,21 @@
 												<li>Intro to 3D Art and Animation</li>
 											</ul>
 											<ul class="actions">
+												<li><a href="SoftwarePort.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Aerospace Engineering Coursework</h3>
+											<ul>
+												<li>Aircraft and Spacecraft Propulsion</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Aerodynamics</li>
+												<li>Spacecraft Dynamics</li>
+												<li>Aircraft / Spacecraft Structures</li>
+											</ul>
+											<ul class="actions">
 												<li><a href="generic.html" class="button">Learn more</a></li>
 											</ul>
 										</div>
@@ -136,39 +207,45 @@
 				<!-- Two -->
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
+
+							<h2>Skills</h2>
+							<div class="skills-grid">
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>Firmware Design</div></div>
+								<div class="skill-box"><i class="devicon-c-plain" style="font-size: 48px;"></i><div>Software Unit Testing</div></div>
+								<div class="skill-box">Multidisciplinary Collaboration</div>
+								<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>Game Engine Design</div></div>
+								<div class="skill-box"><i class="devicon-matlab-plain" style="font-size: 48px;"></i><div>PCB Design</div></div>
+								<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>Hardware Validation</div></div>
+								<div class="skill-box">SPICE and Circuit Anaylsis</div>
+							</div>
+
+							<h2>Primary Skills</h2>
+							<div class="skills-grid">
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>C++</div></div>
+								<div class="skill-box"><i class="devicon-c-plain" style="font-size: 48px;"></i><div>C</div></div>
+								<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>C#</div></div>
+								<div class="skill-box"><i class="devicon-matlab-plain" style="font-size: 48px;"></i><div>MATLAB</div></div>
+								<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+								<div class="skill-box">Altium Designer</div>
+								<div class="skill-box">LTSpice</div>
+							</div>
+
+							<h2>Secondary Skills</h2>
+							<div class="skills-grid2">
+								<div class="skill-box"><i class="devicon-html5-plain" style="font-size: 48px;"></i><div>Web Dev</div></div>
+								<div class="skill-box"><i class="devicon-lua-plain" style="font-size: 48px;"></i><div>Lua</div></div>
+								<div class="skill-box"><i class="devicon-python-plain" style="font-size: 48px;"></i><div>Python</div></div>
+								<div class="skill-box"><i class="devicon-cmake-plain" style="font-size: 48px;"></i><div>CMake</div></div>
+								<div class="skill-box"><i class="devicon-jira-plain" style="font-size: 48px;"></i><div>Jira</div></div>
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>Assembly</div></div>
+								<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux</div></div>
+								<div class="skill-box"><i class="devicon-matlab-plain" style="font-size: 48px;"></i><div>Verilog</div></div>
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>Assembly</div></div>
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>Assembly</div></div>
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>Siemens NX</div></div>
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>SolidWorks</div></div>
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>Star-CCM+</div></div>
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>Ansys Discovery</div></div>
 							</div>
 							<ul class="actions">
 								<li><a href="generic.html" class="button">Learn more</a></li>
@@ -177,63 +254,6 @@
 					</section>
 
 				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
 
 				<!--Four-->
 				<section id="Four" class="wrapper style2 spotlights">
@@ -273,6 +293,64 @@
 								</div>
 							</div>
 						</section>
+					</section>
+
+
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Contact Me</h2>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="maxkenny@umich.edus">maxkenny@umich.edu</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>(000) 000-0000</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
 					</section>
 
 			</div>

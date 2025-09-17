@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Maxwell Portfolio - Software</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<style>
+			/* Center the container */
+			#media-container {
+				width: 640px;         /* fixed size */
+				height: 360px;
+				margin: 40px auto;    /* centers horizontally + space above/below */
+				position: relative;   /* keeps child media absolutely inside */
+				overflow: hidden;     /* hide overflow if any */
+				background: black;    /* optional, looks cleaner */
+			}
+
+			/* Media items inside */
+			#media-container video,
+			#media-container img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;  /* keeps aspect ratio, fits inside box */
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.media {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				transition: opacity 1s ease;
+			}
+
+			.media.active {
+				opacity: 1;
+				z-index: 1;
+			}
+		</style>
+		
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Main</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html" class="active">Software Portfolio</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">IonEngine - Custom Unity-like Game Engine</h1>
+								<span class="image fit">
+									<div id="media-container">
+										<img class="media" src="/images/IonEngineLogo.png">
+										<img class="media" src="/images/IonEngineEditor.png">
+										<video class="media" autoplay muted playsinline>
+											<source src="/videos/f613a65ad71950c71dab4ec3acca6bf2d81fef2b7ffca6fcf047a5e7be91463a.mp4" type="video/mp4">
+										</video>
+										<video class="media" autoplay muted playsinline>
+											<source src="/videos/32a234115d88a9980eb13ddbe320db34fe82e7ef5431de2d4a604ab3afdc8a2c.mp4" type="video/mp4">
+										</video>
+										<video class="media" autoplay muted playsinline>
+											<source src="/videos/8eca07c18b17ce7814cce96cd137fb239b78cafb212dee5fe1c32cf009ce2865.mp4" type="video/mp4">
+										</video>
+									</div>
+								</span>
+								<div>
+									<p>
+										IonEngine is an open-source game engine I designed in a single semester inspired by the Unity Game Engine. It features a custom editor built using the Dear ImGui library designed to feel familiar to 
+										Unity developers, a custom data-oriented particle systems, a physics engine utilizing Box2D, scripting capabilities using Lua, and more.
+									</p>
+									<h4>Engine Stack</h4>
+									<ul>
+												<li>C++ - The backbone of both the runtime engine and the editor, delivering high performance and control.</li>
+												<li>LuaBridge - A lightweight library that binds C++ functions and classes to Lua. Implemented to make scripting sealess and intuitive.</li>
+												<li>SDL - Cross-platform library used to control windowing, input, audio, and rendering on Windows, OSX, and Linux.</li>
+												<li>Box2D - The physics engine that controls colliders, triggers, and rigidbody physics.</li>
+												<li>Dear ImGui - Immediate mode GUI used to build IonEngine's custom in-editor interface.</li>
+												<li>RapidJSON - All information regarding scenes, actors, and components are stored in JSON files that need to be read/written to quickly.</li>
+									</ul>
+
+									<p>I was the sole developer working on this engine with weekly check-ins on progress. Starting with a text adventure game, I rapidly evolved IonEngine to include 2D rendering and audio output using the 
+										SDL library, allow scripting through Lua and the LuaBridge library, integrate a full editor to provide ease of development, and utilize rigidbody physics to simulate movement.
+										<br><br>
+										I also implemented a custom Data-oriented particle system that was fully written in C++ and accessable in Lua through the LuaBridge library. This was to allow millions of particles to be rendered on screen
+										and simulated with minimal losses in performance. 
+									</p>
+								</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">ArcJet - 2D / 3D Game Engine</h1>
+							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+				const mediaItems = document.querySelectorAll('.media');
+				let index = 0;
+				const displayTime = 5000; // 5 seconds per item
+
+				function showNext() {
+				// Hide all
+				mediaItems.forEach(item => item.classList.remove('active'));
+
+				// Show current
+				const current = mediaItems[index];
+				current.classList.add('active');
+
+				// If it's a video, restart & play
+				if (current.tagName.toLowerCase() === 'video') {
+					current.currentTime = 0;
+					current.play();
+				}
+
+				// Move to next (loop back to start)
+				index = (index + 1) % mediaItems.length;
+				}
+
+				// Start slideshow
+				showNext();
+				setInterval(showNext, displayTime);
+			</script>
+	</body>
+</html>
+
