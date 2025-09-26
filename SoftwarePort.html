@@ -93,6 +93,86 @@
 				visibility: visible;
 				opacity: 1;
 			}
+
+			.coursework-lists {
+			display: flex;         /* puts children side by side */
+			gap: 2rem;             /* space between columns */
+			flex-wrap: nowrap;      /* keep all on one line */
+			}
+
+			.course-column {
+				flex: 1;               /* equal width for each column */
+				min-width: 220px;      /* prevents them from shrinking too small */
+				}
+
+			.course-column ul {
+				margin: 0;
+				padding-left: 20px;    /* keep bullets aligned */
+				}
+
+			.coursework-lists {
+				display: flex;
+				gap: 2rem;          /* spacing between columns */
+				align-items: stretch;
+				}
+
+			.coursework-lists > div {
+				flex: 1;            /* equal width columns */
+				display: flex;
+				flex-direction: column;
+				background: rgba(255, 255, 255, 0.05); /* optional: nice card feel */
+				padding: 1rem;
+				border-radius: 10px;
+				}
+
+			.coursework-lists h3 {
+				margin-top: 0;
+				}
+
+			.coursework-lists ul.actions {
+				margin-top: auto;   /* pushes button(s) to the bottom */
+				}
+
+			.coursework-lists ul li {
+				font-size: 1rem;   /* smaller than normal (1rem = 16px default) */
+				line-height: 1.6;    /* adjust spacing between lines */
+				}
+
+			.skills-section {
+				text-align: center;
+				}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skills-grid2 {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skill-box {
+				background: #1c1c1c;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: center;
+				font-size: 14px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				cursor: pointer;
+				}
+
+			.skill-box:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+				}
 		</style>
 		
 		<!-- Header -->
@@ -110,11 +190,74 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/Headshot.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>About</h2>
+									<p>
+										I’m a senior pursuing dual degrees in Computer Science and Aerospace Engineering, with a focus on embedded systems, hardware, and software design. 
+										I bring hands-on experience in avionics, PCB development, hardware verification, and software/firmware design. Leveraging my multidisciplinary background, 
+										I am passionate about advancing technologies that make space more accessible to all.
+									</p>
+									<div class="coursework-lists">
+										<div>
+											<h3>Relevant Computer Engineering Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Electronic Circuits</li>
+												<li>Intro to Semiconductor Devices</li>
+												<li>Industrial Electronics</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="HardwarePort.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Computer Science Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>Game Engine Architecture</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>Data Structures and Algorithms</li>
+												<li>Web Development</li>
+												<li>Intro to 3D Art and Animation</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="SoftwarePort.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Aerospace Engineering Coursework</h3>
+											<ul>
+												<li>Aircraft and Spacecraft Propulsion</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Aerodynamics</li>
+												<li>Spacecraft Dynamics</li>
+												<li>Aircraft / Spacecraft Structures</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="generic.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</section>
+
 
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">IonEngine - Custom Unity-like Game Engine</h1>
+							<h1 id="IonEngine" class="major">IonEngine - Custom Unity-like Game Engine</h1>
 								<div class="slideshow">
 									<img src="/images/IonEngineLogo.png" class="media active">
 									<img src="/images/IonEngineEditor.png" class="media">
@@ -198,8 +341,7 @@
 									</ul>
 
 									<p>
-										As this was a project for class, the University of Michigan Engineering Honor Code prohibits me from posting code. Please reach out if you are interested in
-										seeing the source code! 
+										Please reach out if you are interested in seeing the source code! 
 									</p>
 						</div>
 					</section>
