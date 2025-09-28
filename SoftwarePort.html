@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Maxwell Portfolio - Software</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	</head>
+	<body class="is-preload">
+		<style>
+			/* Center the container */
+			#media-container {
+				width: 640px;         /* fixed size */
+				height: 360px;
+				margin: 40px auto;    /* centers horizontally + space above/below */
+				position: relative;   /* keeps child media absolutely inside */
+				overflow: hidden;     /* hide overflow if any */
+				background: black;    /* optional, looks cleaner */
+			}
+
+			/* Media items inside */
+			#media-container video,
+			#media-container img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;  /* keeps aspect ratio, fits inside box */
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.media {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				transition: opacity 1s ease;
+			}
+
+			.media.active {
+				opacity: 1;
+				z-index: 1;
+			}
+
+			#ArcjetLogo {
+				width: 640px;
+				height: 360px;
+				margin: 40px auto;
+				background: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+
+			#ArcjetLogo img {
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
+			}
+
+			.slideshow {
+				position: relative;
+				width: 680px;
+				height: 360px;
+				overflow: hidden;
+				margin: 20px auto; /* horizontally center */
+				background: #000;  /* optional: black background while switching */
+			}
+
+			.slideshow .media {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;  /* keeps full image/video visible */
+				background: #000;     /* black bars where needed */
+				visibility: hidden;
+				opacity: 0;
+				transition: opacity 0.5s ease;
+			}
+
+			.slideshow .media.active {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.coursework-lists {
+			display: flex;         /* puts children side by side */
+			gap: 2rem;             /* space between columns */
+			flex-wrap: nowrap;      /* keep all on one line */
+			}
+
+			.course-column {
+				flex: 1;               /* equal width for each column */
+				min-width: 220px;      /* prevents them from shrinking too small */
+				}
+
+			.course-column ul {
+				margin: 0;
+				padding-left: 20px;    /* keep bullets aligned */
+				}
+
+			.coursework-lists {
+				display: flex;
+				gap: 2rem;          /* spacing between columns */
+				align-items: stretch;
+				}
+
+			.coursework-lists > div {
+				flex: 1;            /* equal width columns */
+				display: flex;
+				flex-direction: column;
+				background: rgba(255, 255, 255, 0.05); /* optional: nice card feel */
+				padding: 1rem;
+				border-radius: 10px;
+				}
+
+			.coursework-lists h3 {
+				margin-top: 0;
+				}
+
+			.coursework-lists ul.actions {
+				margin-top: auto;   /* pushes button(s) to the bottom */
+				}
+
+			.coursework-lists ul li {
+				font-size: 1rem;   /* smaller than normal (1rem = 16px default) */
+				line-height: 1.6;    /* adjust spacing between lines */
+				}
+
+			.skills-section {
+				text-align: center;
+				}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skills-grid2 {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skill-box {
+				background: #1c1c1c;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: center;
+				font-size: 14px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				cursor: pointer;
+				}
+
+			.skill-box:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+				}
+				
+			.skills-section {
+				text-align: center;
+				}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skills-grid2 {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skill-box {
+				background: #4F53B1;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: center;
+				font-size: 14px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				cursor: pointer;
+				}
+
+			.skill-box:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+				}
+
+			.devicon-icon {
+				font-size: 80px;
+				}	
+
+			.skill-card img {
+				width: 40px;
+				height: 40px;
+				margin-bottom: 10px;
+				}
+
+				#one {
+			display: flex;
+			align-items: center;   /* vertically align items */
+			min-height: 100vh;     /* full screen height */
+			}
+
+			#one a.image {
+			flex: 0 0 auto;        /* keep the image fixed in size */
+			margin-right: 9rem;    /* space between image and text */
+			}
+
+			#one .content {
+			flex: 1;               /* take the remaining space */
+			display: flex;
+			align-items: center;
+			justify-content: flex-start; /* align text more to the left of its space */
+			padding-left: 5rem;    /* push text further right */
+			}
+
+			#one .content .inner {
+			max-width: 900px;
+			text-align: left;      /* keep natural text alignment */
+			}
+		</style>
+		
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Main</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="SoftwarePort.html" class="active">Software</a></li>
+						<li><a href="hardwarePort.html" class="active">Embedded Systems</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/Headshot.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>About</h2>
+									<p>
+										I’m a senior pursuing dual degrees in Computer Science and Aerospace Engineering at the University of Michigan, specializing in embedded systems, 
+										hardware, and software design. My experience spans avionics, PCB development, FPGA programming, and software/firmware engineering,
+										alongside graphics programming and game engine architecture. With this multidisciplinary background, I am passionate about 
+										designing the next generation of systems—whether advancing spacecraft avionics, building high-performance game engines, or 
+										contributing to innovative console hardware.
+									</p>
+									<div class="coursework-lists">
+										<div>
+											<h3>Relevant Computer Engineering Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Electronic Circuits</li>
+												<li>Intro to Semiconductor Devices</li>
+												<li>Industrial Electronics</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="HardwarePort.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Computer Science Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>Game Engine Architecture</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>Data Structures and Algorithms</li>
+												<li>Web Development</li>
+												<li>Intro to 3D Art and Animation</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="SoftwarePort.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Aerospace Engineering Coursework</h3>
+											<ul>
+												<li>Aircraft and Spacecraft Propulsion</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Aerodynamics</li>
+												<li>Spacecraft Dynamics</li>
+												<li>Aircraft / Spacecraft Structures</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="generic.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</section>
+
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+
+							<h2>Skills</h2>
+							<div class="skills-grid">
+								<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+								<div class="skill-box"><img src="icons/UnitTest.svg" alt="Microchip Icon" width="50" height="50"><div>Software Unit Testing</div></div>
+								<div class="skill-box"><img src="icons/collaboration.svg" alt="Microchip Icon" width="50" height="50"><div>Multi Disciplinary Collaboration</div></div>
+								<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>Game Engine Design</div></div>
+								<div class="skill-box"><img src="icons/pcb.svg" alt="Microchip Icon" width="50" height="50"><div>PCB Design</div></div>
+								<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+								<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+							</div>
+
+							<h2>Primary Skills</h2>
+							<div class="skills-grid">
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>C++</div></div>
+								<div class="skill-box"><i class="devicon-c-plain" style="font-size: 48px;"></i><div>C</div></div>
+								<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>C#</div></div>
+								<div class="skill-box"><i class="devicon-matlab-plain" style="font-size: 48px;"></i><div>MATLAB</div></div>
+								<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+								<div class="skill-box"><img src="icons/Altium.svg" alt="Microchip Icon" width="50" height="50">Altium Designer</div>
+								<div class="skill-box"><img src="icons/Ltspice.svg" alt="Microchip Icon" width="50" height="50">LTSpice</div>
+							</div>
+
+							<h2>Secondary Skills</h2>
+							<div class="skills-grid2">
+								<div class="skill-box"><i class="devicon-html5-plain" style="font-size: 48px;"></i><div>Web Dev</div></div>
+								<div class="skill-box"><i class="devicon-lua-plain" style="font-size: 48px;"></i><div>Lua</div></div>
+								<div class="skill-box"><i class="devicon-python-plain" style="font-size: 48px;"></i><div>Python</div></div>
+								<div class="skill-box"><i class="devicon-cmake-plain" style="font-size: 48px;"></i><div>CMake</div></div>
+								<div class="skill-box"><i class="devicon-jira-plain" style="font-size: 48px;"></i><div>Jira</div></div>
+								<div class="skill-box"><img src="icons/assembly.svg" alt="Microchip Icon" width="50" height="50"><div>Assembly</div></div>
+								<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux</div></div>
+								<div class="skill-box"><img src="icons/verilog.svg" alt="Microchip Icon" width="50" height="50"><div>Verilog</div></div>
+								<div class="skill-box"><img src="icons/Unity.svg" alt="Microchip Icon" width="50" height="50"><div>Unity</div></div>
+								<div class="skill-box"><img src="icons/Unrealengine.svg" alt="Microchip Icon" width="50" height="50"><div>Unreal</div></div>
+								<div class="skill-box"><img src="icons/Siemens.svg" alt="Microchip Icon" width="50" height="50"><div>Siemens NX</div></div>
+								<div class="skill-box"><img src="icons/Dassaultsystemes.svg" alt="Microchip Icon" width="50" height="50"><div>SolidWorks</div></div>
+								<div class="skill-box"><img src="icons/Siemens.svg" alt="Microchip Icon" width="50" height="50"><div>Star-CCM+</div></div>
+								<div class="skill-box"><img src="icons/Ansys.svg" alt="Microchip Icon" width="50" height="50"><div>Ansys Discovery</div></div>
+							</div>
+						</div>
+					</section>
+
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 id="IonEngine" class="major">IonEngine - Custom Unity-like Game Engine</h1>
+								<div class="slideshow">
+									<img src="images/IonEngineLogo.png" class="media active">
+									<img src="images/IonEngineEditor.png" class="media">
+									<video src="videos/f613a65ad71950c71dab4ec3acca6bf2d81fef2b7ffca6fcf047a5e7be91463a.mp4" class="media" muted></video>
+									<video src="videos/32a234115d88a9980eb13ddbe320db34fe82e7ef5431de2d4a604ab3afdc8a2c.mp4" class="media" muted></video>
+									<video src="videos/8eca07c18b17ce7814cce96cd137fb239b78cafb212dee5fe1c32cf009ce2865.mp4" class="media" muted></video>
+								</div>
+								<div>
+									<p>
+										IonEngine is an open-source game engine I designed in a single semester inspired by the Unity Game Engine. 
+										It features a custom editor built using the Dear ImGui library designed to feel familiar to Unity developers, 
+										a custom data-oriented particle system, a physics engine utilizing Box2D, scripting capabilities using Lua, and more.
+									</p>
+
+									<h4>Engine Stack</h4>
+									<ul>
+										<li>C++ - The backbone of both the runtime engine and the editor, delivering high performance and control.</li>
+										<li>LuaBridge - A lightweight library that binds C++ functions and classes to Lua. Implemented to make scripting seamless and intuitive.</li>
+										<li>SDL - Cross-platform library used to control windowing, input, audio, and rendering on Windows, macOS, and Linux.</li>
+										<li>Box2D - The physics engine that controls colliders, triggers, and rigidbody physics.</li>
+										<li>Dear ImGui - Immediate mode GUI used to build IonEngine's custom in-editor interface.</li>
+										<li>RapidJSON - All information regarding scenes, actors, and components is stored in JSON files that need to be read/written quickly.</li>
+									</ul>
+
+									<p>
+										I was the sole developer working on this engine with weekly check-ins on progress. 
+										Starting with a text adventure game, I rapidly evolved IonEngine to include 2D rendering and audio output using the SDL library, 
+										allow scripting through Lua and the LuaBridge library, integrate a full editor to provide ease of development, 
+										and utilize rigidbody physics to simulate movement.
+										<br><br>
+										I also implemented a custom data-oriented particle system that was fully written in C++ and accessible in Lua through the LuaBridge library. 
+										This allowed millions of particles to be rendered on screen and simulated with minimal performance loss.
+										<br><br>
+										Above you can see IonEngine's logo, examples of gameplay running on my engine, the particle system I implemented, 
+										and a small snippet of what the editor looks like.
+										<br><br>
+										<a href="https://github.com/MaxKenny2003/IonEngine">Check out the GitHub!</a>
+									</p>
+
+										<div class="inner">
+											<h2>Skills Utilized</h2>
+											<div class="skills-grid">
+												<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>Game Engine Design</div></div>
+												<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>C++</div></div>
+												<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+												<div class="skill-box"><i class="devicon-lua-plain" style="font-size: 48px;"></i><div>Lua</div></div>
+												<div class="skill-box"><i class="devicon-cmake-plain" style="font-size: 48px;"></i><div>CMake</div></div>
+												<div class="skill-box"><img src="icons/Unrealengine.svg" alt="Microchip Icon" width="50" height="50"><div>Unreal</div></div>
+												<div class="skill-box"><img src="icons/Unity.svg" alt="Microchip Icon" width="50" height="50"><div>Unity</div></div>
+											</div>
+										</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">ArcJet - 2D / 3D Game Engine</h1>
+							<div id="ArcjetLogo">
+								<span class="image fit"><img src="images/ArcJetLogo.png" alt="" /></span>
+							</div>
+							<div>
+								<p>
+									ArcJet is an open-source game engine that I'm currently developing. 
+									It is a fully data-oriented engine with support for both 2D and 3D graphics using OpenGL. 
+									I am also deepening my understanding of computer graphics as I implement OpenGL into the engine.
+									<br><br> 
+									The finished engine will support 2D and 3D graphics, allow scripting through C#, Python, and Lua, and include a built-in custom editor for ease of development.
+								</p>
+							</div>
+							<div class="inner">
+								<h2>Skills Utilized</h2>
+								<div class="skills-grid">
+									<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>Game Engine Design</div></div>
+									<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>C++</div></div>
+									<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+									<div class="skill-box"><i class="devicon-lua-plain" style="font-size: 48px;"></i><div>Lua</div></div>
+									<div class="skill-box"><i class="devicon-cmake-plain" style="font-size: 48px;"></i><div>CMake</div></div>
+									<div class="skill-box"><img src="icons/Opengl.svg" alt="Microchip Icon" width="50" height="50"><div>OpenGL</div></div>
+									<div class="skill-box"><img src="icons/Unity.svg" alt="Microchip Icon" width="50" height="50"><div>Unity</div></div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Insta485</h1>
+								<div class="slideshow">
+									<img src="images/Insta485_1.png" class="media active">
+									<img src="images/Insta485_2.png" class="media">
+								</div>
+								<div>
+									<p>
+										Built a full-stack Instagram clone featuring multi-user accounts, posts, comments, and likes, powered by server-side dynamic pages. 
+										Implemented backend logic with Flask and SQLite, integrated Jinja2 templates for dynamic HTML rendering, and deployed the application on AWS. 
+										Applied CRUD operations, session management, and SQL database design to deliver a functional, database-backed social media web app.		
+									</p>
+
+									<h4>Utilized</h4>
+									<ul>
+										<li>Jinja2 - for rendering dynamic HTML templates with server-side variables</li>
+										<li>Flask - as the lightweight web framework for handling routes and backend logic</li>
+										<li>SQLite3 - to store user data, posts, and relationships in a relational database</li>
+										<li>Amazon AWS - for deployment and hosting of the web application</li>
+									</ul>
+
+									<p>
+										Please reach out if you are interested in seeing the source code! 
+									</p>
+								</div>
+								<h2>Skills Utilized</h2>
+								<div class="skills-grid">
+									<div class="skill-box"><i class="devicon-html5-plain" style="font-size: 48px;"></i><div>Web Dev</div></div>
+									<div class="skill-box"><img src="icons/Flask.svg" alt="Microchip Icon" width="50" height="50"><div>Flask</div></div>
+									<div class="skill-box"><img src="icons/Javascript.svg" alt="Microchip Icon" width="50" height="50"><div>Javascript</div></div>
+									<div class="skill-box"><img src="icons/Jinja.svg" alt="Microchip Icon" width="50" height="50"><div>Jina2</div></div>
+									<div class="skill-box"><img src="icons/Python.svg" alt="Microchip Icon" width="50" height="50"><div>Python</div></div>
+									<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux</div></div>
+									<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+								</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Battery Managment Systems Engineering Intern</h1>
+								<div class="slideshow">
+									<img src="images/NavitasImage.jpg" class="media active">
+								</div>
+								<div>
+									<p>
+										During the summer of 2025, I interned at Navitas Systems on the Battery Management System (BMS) team, where I designed the hardware validation 
+										plan for their next-generation BMS. To streamline the process, I developed a Python script that parsed Excel test specifications and automatically 
+										generated LaTeX-formatted documentation. In addition, I contributed to the team's software infrastructure by identifying a bug in their testing 
+										communication protocol, creating an issue, and submitting a merge request in GitLab to resolve it.
+									</p>
+
+									<h4>Tasks</h4>
+									<ul>
+										<li>Developed a Python script that parsed Excel test specifications and automatically generated LaTeX-formatted documentation.</li>
+										<li>Debugged and resolved an issue in their implementation of Unified Diagnostic Command (UDC) communication protocol, improving test reliability.</li>
+										<li>Collaborated in a professional software workflow by creating issues and submitting merge requests in GitLab.</li>
+									</ul>
+						</div>
+						<h2>Skills Utilized</h2>
+						<div class="skills-grid">
+							<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+							<div class="skill-box"><img src="icons/UnitTest.svg" alt="Microchip Icon" width="50" height="50"><div>Software Unit Testing</div></div>
+							<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+							<div class="skill-box"><i class="devicon-c-plain" style="font-size: 48px;"></i><div>C</div></div>
+							<div class="skill-box"><img src="icons/Python.svg" alt="Microchip Icon" width="50" height="50"><div>Python</div></div>
+							<div class="skill-box"><img src="icons/Altium.svg" alt="Microchip Icon" width="50" height="50">Altium Designer</div>
+							<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+				document.querySelectorAll('.slideshow').forEach(slideshow => {
+					const mediaItems = slideshow.querySelectorAll('.media');
+					let index = 0;
+					const displayTime = 5000; // 5 seconds per item
+
+					function showNext() {
+						// Hide all in this slideshow
+						mediaItems.forEach(item => item.classList.remove('active'));
+
+						// Show current
+						const current = mediaItems[index];
+						current.classList.add('active');
+
+						// If it's a video, restart & play
+						if (current.tagName.toLowerCase() === 'video') {
+							current.currentTime = 0;
+							current.play();
+						}
+
+						// Move to next (loop back to start)
+						index = (index + 1) % mediaItems.length;
+					}
+
+					// Start this slideshow
+					showNext();
+					setInterval(showNext, displayTime);
+				});
+			</script>
+	</body>
+</html>
+

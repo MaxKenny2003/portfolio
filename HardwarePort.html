@@ -1,0 +1,641 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Maxwell Portfolio - Software</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	</head>
+	<body class="is-preload">
+		<style>
+			/* Center the container */
+			#media-container {
+				width: 640px;         /* fixed size */
+				height: 360px;
+				margin: 40px auto;    /* centers horizontally + space above/below */
+				position: relative;   /* keeps child media absolutely inside */
+				overflow: hidden;     /* hide overflow if any */
+				background: black;    /* optional, looks cleaner */
+			}
+
+			/* Media items inside */
+			#media-container video,
+			#media-container img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;  /* keeps aspect ratio, fits inside box */
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.media {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				transition: opacity 1s ease;
+			}
+
+			.media.active {
+				opacity: 1;
+				z-index: 1;
+			}
+
+			#ArcjetLogo {
+				width: 640px;
+				height: 360px;
+				margin: 40px auto;
+				background: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+
+			#ArcjetLogo img {
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
+			}
+
+			.slideshow {
+				position: relative;
+				width: 680px;
+				height: 360px;
+				overflow: hidden;
+				margin: 20px auto; /* horizontally center */
+				background: #000;  /* optional: black background while switching */
+			}
+
+			.slideshow .media {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;  /* keeps full image/video visible */
+				background: #000;     /* black bars where needed */
+				visibility: hidden;
+				opacity: 0;
+				transition: opacity 0.5s ease;
+			}
+
+			.slideshow .media.active {
+				visibility: visible;
+				opacity: 1;
+			}
+			.coursework-lists {
+			display: flex;         /* puts children side by side */
+			gap: 2rem;             /* space between columns */
+			flex-wrap: nowrap;      /* keep all on one line */
+			}
+
+			.course-column {
+				flex: 1;               /* equal width for each column */
+				min-width: 220px;      /* prevents them from shrinking too small */
+				}
+
+			.course-column ul {
+				margin: 0;
+				padding-left: 20px;    /* keep bullets aligned */
+				}
+
+			.coursework-lists {
+				display: flex;
+				gap: 2rem;          /* spacing between columns */
+				align-items: stretch;
+				}
+
+			.coursework-lists > div {
+				flex: 1;            /* equal width columns */
+				display: flex;
+				flex-direction: column;
+				background: rgba(255, 255, 255, 0.05); /* optional: nice card feel */
+				padding: 1rem;
+				border-radius: 10px;
+				}
+
+			.coursework-lists h3 {
+				margin-top: 0;
+				}
+
+			.coursework-lists ul.actions {
+				margin-top: auto;   /* pushes button(s) to the bottom */
+				}
+
+			.coursework-lists ul li {
+				font-size: 1rem;   /* smaller than normal (1rem = 16px default) */
+				line-height: 1.6;    /* adjust spacing between lines */
+				}
+
+			.skills-section {
+				text-align: center;
+				}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skills-grid2 {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skill-box {
+				background: #1c1c1c;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: center;
+				font-size: 14px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				cursor: pointer;
+				}
+
+			.skill-box:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+				}
+				
+			.skills-section {
+				text-align: center;
+				}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skills-grid2 {
+				display: grid;
+				grid-template-columns: repeat(7, 120px); /* 5 boxes per row */
+				gap: 20px; /* Space between boxes */
+				justify-content: center;
+				margin-top: 20px;
+				}
+
+			.skill-box {
+				background: #4F53B1;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: center;
+				font-size: 14px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				cursor: pointer;
+				}
+
+			.skill-box:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+				}
+
+			.devicon-icon {
+				font-size: 80px;
+				}	
+
+			.skill-card img {
+				width: 40px;
+				height: 40px;
+				margin-bottom: 10px;
+				}
+			#one {
+			display: flex;
+			align-items: center;   /* vertically align items */
+			min-height: 100vh;     /* full screen height */
+			}
+
+			#one a.image {
+			flex: 0 0 auto;        /* keep the image fixed in size */
+			margin-right: 9rem;    /* space between image and text */
+			}
+
+			#one .content {
+			flex: 1;               /* take the remaining space */
+			display: flex;
+			align-items: center;
+			justify-content: flex-start; /* align text more to the left of its space */
+			padding-left: 5rem;    /* push text further right */
+			}
+
+			#one .content .inner {
+			max-width: 900px;
+			text-align: left;      /* keep natural text alignment */
+			}
+
+				
+		</style>
+		
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Main</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="SoftwarePort.html" class="active">Software</a></li>
+						<li><a href="hardwarePort.html" class="active">Embedded Systems</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+
+				<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/Headshot.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>About</h2>
+									<p>
+										I’m a senior pursuing dual degrees in Computer Science and Aerospace Engineering at the University of Michigan, specializing in embedded systems, 
+										hardware, and software design. My experience spans avionics, PCB development, FPGA programming, and software/firmware engineering,
+										alongside graphics programming and game engine architecture. With this multidisciplinary background, I am passionate about 
+										designing the next generation of systems—whether advancing spacecraft avionics, building high-performance game engines, or 
+										contributing to innovative console hardware.
+									</p>
+									<div class="coursework-lists">
+										<div>
+											<h3>Relevant Computer Engineering Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Electronic Circuits</li>
+												<li>Intro to Semiconductor Devices</li>
+												<li>Industrial Electronics</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="HardwarePort.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Computer Science Coursework</h3>
+											<ul>
+												<li>Advanced Embedded Systems</li>
+												<li>Game Engine Architecture</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>Data Structures and Algorithms</li>
+												<li>Web Development</li>
+												<li>Intro to 3D Art and Animation</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="SoftwarePort.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+
+										<div>
+											<h3>Relevant Aerospace Engineering Coursework</h3>
+											<ul>
+												<li>Aircraft and Spacecraft Propulsion</li>
+												<li>CubeSat Flight Laboratory</li>
+												<li>x88 Model Based Systems Engineering Course Series</li>
+												<li>Aerodynamics</li>
+												<li>Spacecraft Dynamics</li>
+												<li>Aircraft / Spacecraft Structures</li>
+											</ul>
+											<ul class="actions">
+												<li><a href="generic.html" class="button">Learn more</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</section>
+
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+
+							<h2>Skills</h2>
+							<div class="skills-grid">
+								<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+								<div class="skill-box"><img src="icons/UnitTest.svg" alt="Microchip Icon" width="50" height="50"><div>Software Unit Testing</div></div>
+								<div class="skill-box"><img src="icons/collaboration.svg" alt="Microchip Icon" width="50" height="50"><div>Multi Disciplinary Collaboration</div></div>
+								<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>Game Engine Design</div></div>
+								<div class="skill-box"><img src="icons/pcb.svg" alt="Microchip Icon" width="50" height="50"><div>PCB Design</div></div>
+								<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+								<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+							</div>
+
+							<h2>Primary Skills</h2>
+							<div class="skills-grid">
+								<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>C++</div></div>
+								<div class="skill-box"><i class="devicon-c-plain" style="font-size: 48px;"></i><div>C</div></div>
+								<div class="skill-box"><i class="devicon-csharp-plain" style="font-size: 48px;"></i><div>C#</div></div>
+								<div class="skill-box"><i class="devicon-matlab-plain" style="font-size: 48px;"></i><div>MATLAB</div></div>
+								<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+								<div class="skill-box"><img src="icons/Altium.svg" alt="Microchip Icon" width="50" height="50">Altium Designer</div>
+								<div class="skill-box"><img src="icons/Ltspice.svg" alt="Microchip Icon" width="50" height="50">LTSpice</div>
+							</div>
+
+							<h2>Secondary Skills</h2>
+							<div class="skills-grid2">
+								<div class="skill-box"><i class="devicon-html5-plain" style="font-size: 48px;"></i><div>Web Dev</div></div>
+								<div class="skill-box"><i class="devicon-lua-plain" style="font-size: 48px;"></i><div>Lua</div></div>
+								<div class="skill-box"><i class="devicon-python-plain" style="font-size: 48px;"></i><div>Python</div></div>
+								<div class="skill-box"><i class="devicon-cmake-plain" style="font-size: 48px;"></i><div>CMake</div></div>
+								<div class="skill-box"><i class="devicon-jira-plain" style="font-size: 48px;"></i><div>Jira</div></div>
+								<div class="skill-box"><img src="icons/assembly.svg" alt="Microchip Icon" width="50" height="50"><div>Assembly</div></div>
+								<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux</div></div>
+								<div class="skill-box"><img src="icons/verilog.svg" alt="Microchip Icon" width="50" height="50"><div>Verilog</div></div>
+								<div class="skill-box"><img src="icons/Unity.svg" alt="Microchip Icon" width="50" height="50"><div>Unity</div></div>
+								<div class="skill-box"><img src="icons/Unrealengine.svg" alt="Microchip Icon" width="50" height="50"><div>Unreal</div></div>
+								<div class="skill-box"><img src="icons/Siemens.svg" alt="Microchip Icon" width="50" height="50"><div>Siemens NX</div></div>
+								<div class="skill-box"><img src="icons/Dassaultsystemes.svg" alt="Microchip Icon" width="50" height="50"><div>SolidWorks</div></div>
+								<div class="skill-box"><img src="icons/Siemens.svg" alt="Microchip Icon" width="50" height="50"><div>Star-CCM+</div></div>
+								<div class="skill-box"><img src="icons/Ansys.svg" alt="Microchip Icon" width="50" height="50"><div>Ansys Discovery</div></div>
+							</div>
+						</div>
+					</section>
+
+				<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 id="CurrentProjects" class="major">Current Projects</h1>
+								<div>
+									<p>Here is a detailed list of the projects I'm currently working on during the Fall of 25. This will be updated throughout the semester!</p>
+									<h2>CubeSat Flight Laboratory - Alpha Team</h2>
+									<div class="slideshow">
+										<img src="images/CubeSat.png" class="media active">
+									</div>
+									<p>
+										Currently serving as the hardware and software lead of a small engineering team developing a CubeSat designed to detect 
+										Forbush decreases in the atmosphere. The system uses a Raspberry Pi Zero running Linux as the primary flight computer, 
+										interfaced with multiple auxiliary sensors via Qwiic connectors. Target launch date is late November of this year. (System pictured above.)	
+									</p>
+
+									<h2>CubeRTOS</h2>
+									<p>
+										Currently developing a lightweight, memory-efficient RTOS in C for our CubeSat mission. Implemented software multi-threading to run tasks before, 
+										during, and after flight operations. Designed a custom scheduler in C that executes user-defined tasks across four worker threads while using a dedicated 
+										scheduling thread to ensure all tasks meet timing requirements.
+									</p>
+
+									<h2>AstroCam</h2>
+									<div class="slideshow">
+										<img src="images/UI_1.png" class="media active">
+										<img src="images/UI_2.png" class="media active">
+										<img src="images/UI_3.png" class="media active">
+										<img src="images/UI_4.png" class="media active">
+									</div>
+									<p>
+										Currently serving as Chief Engineer for the University of Michigan’s Bioastronautics and Life Support Systems (BLiSS) 
+										AstroCam project, leading the design, manufacturing, testing, and verification of a lightweight camera for use in microgravity environments.
+										Utilizing Altium Designer to create and verify our PCBs.
+									</p>
+									<ul>
+										<li>Directing design and development of a dual-PCB hand held camera for use in micro-gravity within a $10k budget using MBSE principles.</li>
+										<li>Calculated worst-case power draw for PCB system to optimize the design, reducing weight by 10 while maintaning required mission lifetime.</li>
+										<li>Currently directing fabrication, testing, and design verification of system.</li>
+									</ul>
+
+									<h2>Autonomous Parafoil</h2>
+									<p>
+										Currently serving as Chief Engineer for an advanced embedded systems project developing an Autonomous Parafoil as a low-cost 
+										recovery method for in-atmosphere scientific testing. The system, now in the planning phase with a functional demo targeted for 
+										late November, will feature a ground station capable of sending GPS landing coordinates to a custom PCB-based autonomous payload.
+										The payload will communicate via DigiMesh over XBee modules and utilize an Extended Kalman Filter with a suite of sensors to 
+										guide itself to a landing site with ~100 m accuracy.
+									</p>
+
+							<div class="inner">
+								<h2>Skills Utilized</h2>
+								<div class="skills-grid">
+									<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+									<div class="skill-box"><img src="icons/pcb.svg" alt="Microchip Icon" width="50" height="50"><div>PCB Design</div></div>
+									<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+									<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+									<div class="skill-box"><img src="icons/Altium.svg" alt="Microchip Icon" width="50" height="50">Altium Designer</div>
+									<div class="skill-box"><img src="icons/verilog.svg" alt="Microchip Icon" width="50" height="50"><div>Verilog</div></div>
+									<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux</div></div>
+								</div>
+							</div>
+						</div>
+				</section>
+
+				<!-- Main -->
+				 <section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Battery Managment Systems Engineering Intern</h1>
+								<div class="slideshow">
+									<img src="/images/NavitasImage.jpg" class="media active">
+								</div>
+								<div>
+									<p>
+										During the summer of 2025, I interned at Navitas Systems on the Battery Management System (BMS) team, where I designed the hardware validation 
+										plan for their next-generation BMS. To streamline the process, I developed a Python script that parsed Excel test specifications and automatically 
+										generated LaTeX-formatted documentation. In addition, I contributed to the team's software infrastructure by identifying a bug in their testing 
+										communication protocol, creating an issue, and submitting a merge request in GitLab to resolve it.
+									</p>
+
+									<h4>Tasks</h4>
+									<ul>
+										<li>Developed an algorithm using Micro-Ohm meter measurements to account for voltage drops in 00-gauge wiring within battery modules, reducing nuisance shutdowns by 15%.</li>
+										<li>Led design verification for Battery Management System PCBs by writing and executing test procedures using DMMs, Power Supplies, and Electronic Loads</li>
+										<li>Developed a Python script that parsed Excel test specifications and automatically generated LaTeX-formatted documentation.</li>
+										<li>Debugged and resolved an issue in their implementation of Unified Diagnostic Command (UDC) communication protocol, improving test reliability.</li>
+										<li>Collaborated in a professional software workflow by creating issues and submitting merge requests in GitLab.</li>
+									</ul>
+
+									<h2>Skills Utilized</h2>
+									<div class="skills-grid">
+										<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+										<div class="skill-box"><img src="icons/pcb.svg" alt="Microchip Icon" width="50" height="50"><div>PCB Design</div></div>
+										<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+										<div class="skill-box"><img src="icons/Altium.svg" alt="Microchip Icon" width="50" height="50">Altium Designer</div>
+										<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+										<div class="skill-box"><i class="devicon-python-plain" style="font-size: 48px;"></i><div>Python</div></div>
+										<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+									</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 id="Ping_Pong_Robot" class="major">Ping Pong Robot</h1>
+								<div class="slideshow">
+									<img src="images/pinPong1.jpg" class="media active">
+									<img src="images/pinPong2.jpg" class="media">
+									<video src="videos/pingpongvid1.mp4" class="media" muted></video>
+								</div>
+								<div>
+									<p>
+										Led a team of 4 engineers in designing and verifying a 2-axis ping pong robot capable of rallying with a player for 30 seconds. 
+										Implemented three operating modes: (1) Wiimote control using a custom Bluetooth interface, (2) PS2 controller mode for manual 
+										paddle movement and swinging, and (3) autonomous mode with a Raspberry Pi 4 running OpenCV for real-time ball tracking. 
+										Integrated SPI, I²C, voltage regulation, and STM32 microcontroller for system control.
+									</p>
+
+									<h4>Technical Responsiblities</h4>
+									<ul>
+										<li>Designed, manufactured, and tested the mechanical system using stepper motors, drive belts, and 80/20 aluminum extrusion.</li>
+										<li>Developed custom stepper motor drivers with built in damping to acceleration and deceleration to streamline integration with the main control program.</li>
+										<li>Led testing campaigns across all three operating modes to ensure reliable system performance.</li>
+										<li>Assembled and soldered three stepper motor driver circuits on protoboards.</li>
+									</ul>
+
+									<h2>Skills Utilized</h2>
+									<div class="skills-grid">
+										<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+										<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+										<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+										<div class="skill-box"><img src="icons/assembly.svg" alt="Microchip Icon" width="50" height="50"><div>Assembly</div></div>
+										<div class="skill-box"><img src="icons/Arm.svg" alt="Microchip Icon" width="50" height="50"><div>Bare Metal Programming</div></div>
+										<div class="skill-box"><i class="devicon-c-plain" style="font-size: 48px;"></i><div>C</div></div>
+										<div class="skill-box"><img src="icons/collaboration.svg" alt="Microchip Icon" width="50" height="50"><div>Multi Disciplinary Collaboration</div></div>
+									</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">OpenCV Controlled AGV</h1>
+							<div id="ArcjetLogo">
+								<span class="image fit"><img src="images/openCVcar.jpg" alt="" /></span>
+							</div>
+							<div>
+								<p>
+									Developed a small Autonomous Guided Vehicle (AGV) to gain embedded OS experience on a Raspberry Pi 4 running Linux. 
+									Implemented OpenCV to track a ball’s position and transmitted direction commands from user space to kernel space for precise, 
+									high-speed movement. Verified correct operation using SSH with X11 forwarding to confirm OpenCV tracked the intended object.
+							</div>
+
+							<h2>Skills Utilized</h2>
+							<div class="skills-grid">
+								<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+								<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+								<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+								<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux</div></div>
+								<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux Device Drivers</div></div>
+								<div class="skill-box"><i class="devicon-python-plain" style="font-size: 48px;"></i><div>Python</div></div>
+								<div class="skill-box"><img src="icons/pcb.svg" alt="Microchip Icon" width="50" height="50"><div>PCB Design</div></div>
+							</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Michigan Aeronautical Science Association Bayboards Member</h1>
+								<div class="slideshow">
+									<img src="images/project_bayboard_3.png" class="media active">
+									<img src="images/project_bayboard_4.png" class="media active">
+									<img src="images/project_bayboard_5.png" class="media active">
+								</div>
+								<div>
+									<p>
+										Contributed to the design of a three-PCB network responsible for data acquisition across the body of a liquid bipropellant rocket. 
+										Served as the responsible engineer for an H-bridge circuit controlling an electric valve used to regulate liquid oxygen flow to the engine bay.
+									</p>
+
+									<h2>Skills Utilized</h2>
+									<div class="skills-grid">
+										<div class="skill-box"><img src="icons/pcb.svg" alt="Microchip Icon" width="50" height="50"><div>PCB Design</div></div>
+										<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+										<div class="skill-box"><img src="icons/Altium.svg" alt="Microchip Icon" width="50" height="50">Altium Designer</div>
+										<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+									</div>
+						</div>
+					</section>
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Bloom Box - Bioastronautics and Life Support Systems</h1>
+								<div class="slideshow">
+									<img src="images/Variss2.jpg" class="media active">
+									<img src="images/VARISS1.jpg" class="media active">
+								</div>
+								<div>
+									<p>
+										Led a team of four engineers through the Model-Based Systems Engineering (MBSE) design cycle to develop a CO<sub>2</sub> bioregenerative algae scrubber for a Collins Aerospace–funded project.
+										This was my first experience serving as the lead for both electronics and software. The system needed to perform several mission-critical tasks periodically, including pH measurement of the 
+										algae, water and nutrient distribution, tank cleaning, and real-time information display. To achieve this, we implemented a distributed control system using five Arduino Unos as worker nodes, 
+										managed by a central Raspberry Pi acting as the data collector and task distributor that were dasiy-chained together to communicate using SPI.
+									</p>
+
+									<h2>Skills Utilized</h2>
+									<div class="skills-grid">
+										<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+										<div class="skill-box"><img src="icons/voltmeter.svg" alt="Microchip Icon" width="50" height="50"><div>Hardware Validation</div></div>
+										<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+										<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+										<div class="skill-box"><i class="devicon-cplusplus-plain" style="font-size: 48px;"></i><div>C++</div></div>
+										<div class="skill-box"><img src="icons/Dassaultsystemes.svg" alt="Microchip Icon" width="50" height="50"><div>SolidWorks</div></div>
+								<div class="skill-box"><img src="icons/Siemens.svg" alt="Microchip Icon" width="50" height="50"><div>Star-CCM+</div></div>
+									</div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+				document.querySelectorAll('.slideshow').forEach(slideshow => {
+					const mediaItems = slideshow.querySelectorAll('.media');
+					let index = 0;
+					const displayTime = 5000; // 5 seconds per item
+
+					function showNext() {
+						// Hide all in this slideshow
+						mediaItems.forEach(item => item.classList.remove('active'));
+
+						// Show current
+						const current = mediaItems[index];
+						current.classList.add('active');
+
+						// If it's a video, restart & play
+						if (current.tagName.toLowerCase() === 'video') {
+							current.currentTime = 0;
+							current.play();
+						}
+
+						// Move to next (loop back to start)
+						index = (index + 1) % mediaItems.length;
+					}
+
+					// Start this slideshow
+					showNext();
+					setInterval(showNext, displayTime);
+				});
+			</script>
+	</body>
+</html>
+
