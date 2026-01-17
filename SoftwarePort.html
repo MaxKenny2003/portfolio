@@ -252,8 +252,8 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="SoftwarePort.html#IonEngine" class="active">Software</a></li>
-						<li><a href="HardwarePort.html#CurrentProjects" class="active">Embedded Systems</a></li>
+						<li><a href="SoftwarePort.html#CubeRTOS" class="active">Software</a></li>
+						<li><a href="HardwarePort.html#Parafoil" class="active">Embedded Systems</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -286,7 +286,7 @@
 												<li>Industrial Electronics</li>
 											</ul>
 											<ul class="actions">
-												<li><a href="HardwarePort.html" class="button">Learn more</a></li>
+												<li><a href="HardwarePort.html#Parafoil" class="button">Learn more</a></li>
 											</ul>
 											<ul class="actions">
 												<li><a href="resumes/MaxKennyEEResume.pdf" download class="button">My Resume!</a></li>
@@ -302,9 +302,10 @@
 												<li>Data Structures and Algorithms</li>
 												<li>Web Development</li>
 												<li>Intro to 3D Art and Animation</li>
+												<li>Computer Graphics</li>
 											</ul>
 											<ul class="actions">
-												<li><a href="SoftwarePort.html" class="button" style="margin-top:1.5rem;">Learn more</a></li>
+												<li><a href="SoftwarePort.html#CubeRTOS" class="button" >Learn more</a></li>
 											</ul>
 											<ul class="actions">
 												<li><a href="resumes/MaxKennyCSResume.pdf" download class="button">My Resume!</a></li>
@@ -375,6 +376,85 @@
 
 
 				<!-- Main -->
+
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 id="CubeRTOS" class="major">CubeSat Flight Laboratory - CubeRTOS
+								<span class="subtext"><h6>August 2025 - January 2026</h6></span>
+							</h1>
+							<div class="slideshow">
+									<img src="images/Sat_Assembled.png" class="media active">
+									<img src="images/cube_group_photo.jpg" class="media active">
+									<img src="images/cube_pic_1.jpg" class="media active">
+									<img src="images/cube_pic_2.jpg" class="media active">
+									<img src="images/cube_pic_3.jpg" class="media active">
+									<img src="images/cube_pic_4.jpg" class="media active">
+							</div>
+							<div>
+								<h2>Overview</h2>
+								<p>
+									In Fall 2025, I served as the Software and Electrical Lead for the Alpha Team in the CubeSat Flight Laboratory. 
+									Our goal was to design, build, test, and fly a 1U CubeSat to measure Forbusch Decreases. The project focused on delivering reliable 
+									power to a suite of sensors, establishing robust communication with a mobile ground station, and ensuring consistent operation throughout 
+									the mission.
+								</p>
+
+								<h3>Software Contributions</h3>
+								<ul>
+									<li>Developed embedded software in C/C++ for sensor management and communication tasks</li>
+									<li>Implemented a custom real-time scheduler, CubeRTOS, along with fault detection to ensure reliable onboard operation</li>
+									<li>Programmed data acquisition and telemetry routines for payload and subsystem monitoring</li>
+									<li>Supported ground station communication protocols, including encoding/decoding and command handling</li>
+									<li>Tested software on a Raspberry Pi Zero under simulated flight conditions to verify robustness</li>
+								</ul>
+
+								<h3>Hardware Contributions</h3>
+								<ul>
+									<li>Tested and validated digital and analog circuits, including voltage regulation and signal integrity using DMMs, Logic Analyzers, and electronic loads</li>
+									<li>Performed hardware bring-up for microcontrollers, sensors, and radios</li>
+									<li>Integrated sensors and actuators into the CubeSat bus, ensuring proper operation under size, weight, and power constraints</li>
+								</ul>
+
+								<h3>CubeRTOS - Custom Real Time Operating System</h3>
+								<p>
+									CubeRTOS is a lightweight, custom-built real-time operating system that I designed and implemented for embedded flight and payload systems (Primarily Cube Satellites). 
+									It was developed to provide deterministic task scheduling, robust fault handling, and low-overhead operation on resource-constrained 
+									hardware where existing RTOS solutions were either too heavy or insufficiently transparent.<br><br>
+
+									At its core, CubeRTOS features a real-time scheduler designed to meet strict timing constraints while maintaining 
+									predictable execution behavior. I implemented task management and timing mechanisms entirely in C, with careful 
+									attention to interrupt safety, memory usage, and execution latency. The system was built to be highly modular, allowing tasks to be 
+									added or reconfigured with minimal impact on system stability through JSON configuration files.<br><br>
+
+									A key focus of CubeRTOS was fault detection and system reliability. I designed monitoring mechanisms to detect task overruns, missed 
+									deadlines, and unexpected system states, enabling the software to respond gracefully to faults rather than failing silently. This was 
+									particularly important for aerospace and embedded applications where reliability and debuggability are critical.<br><br>
+
+									CubeRTOS was successfully used to support sensor management, data acquisition, and communication tasks, integrating tightly with 
+									low-level drivers and telemetry systems. Through this project, I gained hands-on experience with real-time systems design, scheduler 
+									theory, and hardware–software integration, while building an RTOS from the ground up rather than treating it as a black box.<br><br>
+
+									Technologies & Concepts:
+									C/C++, real-time scheduling, embedded systems, interrupt-driven design, fault detection, low-level hardware interaction, deterministic software design<br><br>
+									
+									<a href="https://github.com/MaxKenny2003/CubeRTOS">Check out the Github!</a>
+								</p>
+
+
+								<h2>Skills Utilized</h2>
+									<div class="skills-grid">
+										<div class="skill-box"><img src="icons/firmwareDesign.svg" alt="Microchip Icon" width="50" height="50"><div>Firmware Design</div></div>
+										<div class="skill-box"><img src="icons/UnitTest.svg" alt="Microchip Icon" width="50" height="50"><div>Software Unit Testing</div></div>
+										<div class="skill-box"><i class="devicon-c-plain" style="font-size: 48px;"></i><div>C</div></div>
+										<div class="skill-box"><i class="devicon-python-plain" style="font-size: 48px;"></i><div>Python</div></div>
+										<div class="skill-box"><img src="icons/ic.svg" alt="Microchip Icon" width="50" height="50">SPICE and Circuit Anaylsis</div>
+										<div class="skill-box"><i class="devicon-linux-plain" style="font-size: 48px;"></i><div>Linux</div></div>
+										<div class="skill-box"><i class="devicon-github-original" style="font-size: 48px;"></i><div>GitHub</div></div>
+									</div>
+							</div>
+						</div>
+				</section>
+
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 id="IonEngine" class="major">IonEngine - Custom Unity-like Game Engine
@@ -469,7 +549,7 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Insta485
-								<span class="subtext"><h6>August 2025 - Present</h6></span>
+								<span class="subtext"><h6>August 2025 - December 2025</h6></span>
 							</h1>
 								<div class="slideshow">
 									<img src="images/Insta485_1.png" class="media active">
@@ -526,7 +606,7 @@
 									<h4>Tasks</h4>
 									<ul>
 										<li>Developed a Python script that parsed Excel test specifications and automatically generated LaTeX-formatted documentation.</li>
-										<li>Debugged and resolved an issue in their implementation of Unified Diagnostic Command (UDC) communication protocol, improving test reliability.</li>
+										<li>Debugged and resolved an issue in their implementation of the Unified Diagnostic Command (UDC) communication protocol, improving test reliability.</li>
 										<li>Collaborated in a professional software workflow by creating issues and submitting merge requests in GitLab.</li>
 									</ul>
 						</div>
@@ -618,7 +698,7 @@
 				document.querySelectorAll('.slideshow').forEach(slideshow => {
 					const mediaItems = slideshow.querySelectorAll('.media');
 					let index = 0;
-					const displayTime = 5000; // 5 seconds per item
+					const displayTime = 12000; // 5 seconds per item
 
 					function showNext() {
 						// Hide all in this slideshow
